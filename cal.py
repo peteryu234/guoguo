@@ -16,7 +16,6 @@ while (count - correct - error != 0):
         if answer.isdigit():
             if num1 - num2 == int(answer):
                 correct += 1
-                print('correct!')
             else:
                 error += 1
                 print('wrong!')
@@ -27,7 +26,6 @@ while (count - correct - error != 0):
         if answer.isdigit():
             if num1 + num2 == int(answer):
                 correct += 1
-                print('correct!')
             else:
                 error += 1
                 print('wrong!')
