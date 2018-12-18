@@ -11,7 +11,7 @@ while (count - correct - error != 0):
         print('{} questions left'.format(count-correct-error))
     num1 = int(random.random() * 20)
     num2 = int(random.random() * 20)
-    if ((num1 - num2) > 10 or (0 < (num1 - num2) < 10 and num2 > 10)):
+    if num1 - num2 >= 0:
         answer = input(str(num1) + '-' + str(num2) + '=')
         if answer.isdigit():
             if num1 - num2 == int(answer):
