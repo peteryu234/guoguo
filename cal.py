@@ -7,10 +7,8 @@ error = 0
 
 start = time.time()
 while (count - correct - error != 0):
-    if (correct+error) % 10 == 0:
-        print('{} questions left'.format(count-correct-error))
     num1 = int(random.random() * 20)
-    num2 = int(random.random() * 20)
+    num2 = int(random.random() * 10)
     if num1 - num2 >= 0:
         answer = input(str(num1) + '-' + str(num2) + '=')
         if answer.isdigit():
@@ -18,9 +16,10 @@ while (count - correct - error != 0):
                 correct += 1
             else:
                 error += 1
+                count += 10
                 print('wrong!')
         else:
-            error += 1
+            print('wrong input')
     elif num1 + num2 <= 20:
         answer = input(str(num1) + '+' + str(num2) + '=')
         if answer.isdigit():
@@ -28,11 +27,14 @@ while (count - correct - error != 0):
                 correct += 1
             else:
                 error += 1
+                count += 10
                 print('wrong!')
         else:
-            error += 1
+            print('wrong input')
     else:
         pass
+    if (correct+error) % 10 == 0:
+        print('{} questions finished'.format(correct+error))
 end = time.time()
 print('correct number is {}'.format(correct))
 print('error number is {}'.format(error))
